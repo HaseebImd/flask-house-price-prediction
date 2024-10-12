@@ -7,7 +7,6 @@ import os
 # Initialize the Flask app
 app = Flask(__name__)
 
-port = int(os.environ.get("PORT", 5000))
 
 # Enable CORS for all routes and all origins
 CORS(app)
@@ -67,4 +66,5 @@ def predict():
 
 # Run the Flask app
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Default to port 5000 if PORT isn't set
     app.run(host="0.0.0.0", port=port)
